@@ -3,7 +3,7 @@ class Board
 
     attr_reader :board
 
-    def initialize(board)
+    def initialize
         @board = Array.new(8) { Array.new(8) }
     end
 
@@ -33,6 +33,7 @@ class Board
 end
 
 class Piece
+    attr_reader :value
     def initialize(value,pos)
         @value = value
         @pos = pos
@@ -44,8 +45,4 @@ class Nullpiece < Piece
         super
         @value = nil
     end
-    
-
-    
-
 end
