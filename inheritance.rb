@@ -2,8 +2,9 @@
 class Employee
 
     attr_reader :employee_name, :title, :salary, :boss
+    
 
-    def initialize(employee_name, title, salary, boss)
+    def initialize(employee_name, salary, title, boss)
         @employee_name = employee_name
         @title = title
         @salary = salary
@@ -20,12 +21,22 @@ end
 class Manager < Employee
 
     def initialize(employee_name, title, salary, boss)
-        super(employee_name, title, salary)
+        super
         @subordinates = []
     end
 
     def bonus(multiplier)
-        @salary * multiplier
+        total = 0
+        @subordinates. each do |employee|
+            total+= (employee.salary) * multiplier 
+
+        end
+
+        total
+    end
+
+    def add_employee(employee)
+        @subordinates << employee
     end
 
 end
