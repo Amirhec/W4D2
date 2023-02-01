@@ -76,29 +76,18 @@ module Slideable
   def grow_unblocked_moves_in_dir(dx, dy)
     # create an array to collect moves
     current_x, current_y = self.pos
-    current_x + dx, current_y + dy
 
     final_arr = []
    
-    
-
-      while  current_x < @board.length || current_y < @board.length
+      while current_x < 8 || current_y < 8
      
-          
             if @board[current_x][current_y] == nil
               final_arr.push([current_x += dx,current_y += dy])
             end
 
       end
           
-          
-          
-      
-  
       return final_arr
-    
-    
-
     
     # get the piece's current row and current column
 
