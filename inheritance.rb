@@ -28,7 +28,7 @@ class Manager < Employee
     def bonus(multiplier)
         total = 0
         @subordinates. each do |employee|
-            total+= (employee.salary) * multiplier 
+            total += (employee.salary) * multiplier 
 
         end
 
@@ -36,7 +36,8 @@ class Manager < Employee
     end
 
     def add_employee(employee)
-        @subordinates << employee
+        @subordinates.push(employee)
     end
 
 end
+

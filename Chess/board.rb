@@ -5,6 +5,10 @@ class Board
 
     def initialize
         @board = Array.new(8) { Array.new(8) }
+        queen = Queen.new("queen", [0,3])
+        king = King.new("king", [0,4])
+        bishop_1 = Bishop.new("bishop",[0,1])
+        bishop_2= Bishop.new("bishop". [0,5])
     end
 
     def [](pos)
@@ -30,19 +34,11 @@ class Board
 
     end
 
+    def add_piece(piece,pos)
+       
+    end
+
 end
 
-class Piece
-    attr_reader :value
-    def initialize(value,pos)
-        @value = value
-        @pos = pos
-    end
-end
 
-class Nullpiece < Piece
-    def initialize(value,pose)
-        super
-        @value = nil
-    end
-end
+
