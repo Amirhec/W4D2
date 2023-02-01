@@ -32,8 +32,11 @@ module Slideable
 
   # should return an array of places a Piece can move to
   def moves
-    p move_dirs
 
+    move_dirs.each do |direction|
+      dx, dy = direction
+      grow_unblocked_moves_in_dir(dx, dy)
+    end
 
 
     #self.pos is an array position [3,2]
@@ -67,6 +70,10 @@ module Slideable
   def grow_unblocked_moves_in_dir(dx, dy)
     # create an array to collect moves
 
+    current_x, current_y = self.pos
+    current_x + dx, current_y + dy
+
+    
     # get the piece's current row and current column
 
     # in a loop:
