@@ -5,6 +5,10 @@ class Piece
         @value = value
         @pos = pos
     end
+
+    def moves
+        
+    end
 end
 
 class Nullpiece < Piece

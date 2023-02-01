@@ -5,7 +5,7 @@ require_relative  "rook.rb"
 require_relative   "knight.rb"
 require_relative   "pawn.rb"
 
-require "byebug"
+
 
 class Board
 
@@ -94,7 +94,7 @@ class Board
 
         instance = @board[row_start][col_start]
         @board[row_end][col_end] = instance
-# debugger
+
         @board[row_start][col_start] = nil
 
 
@@ -105,9 +105,6 @@ class Board
 
     end
 
-    def add_piece(piece,pos)
-       
-    end
 
 end
 

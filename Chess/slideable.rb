@@ -7,31 +7,39 @@ module Slideable
       # the row increases by 0 and the column increases by 1
   HORIZONTAL_DIRS = [
     [-1, 0], # left
-    [:dx, :dy], # right
-    [:dx, :dy], # up (vertical)
-    [:dx, :dy]  # down (vertical)
+    [1, 0], # right
+    [0, 1], # up (vertical)
+    [0, -1]  # down (vertical)
   ].freeze
 
   # DIAGONAL_DIRS stores an array of diagonal directions
   DIAGONAL_DIRS = [
-    [:dx, :dy], # up + left
-    [:dx, :dy], # up + right
-    [:dx, :dy], # down + left
-    [:dx, :dy]  # down + right
+    [-1, -1], # up + left
+    [-1, 1], # up + right
+    [1, -1], # down + left
+    [1, 1]  # down + right
   ].freeze
 
 
   def horizontal_dirs
-    # getter for HORIZONTAL_DIRS
+    HORIZONTAL_DIRS
   end
 
   def diagonal_dirs
-    # getter for DIAGONAL_DIRS
+    DIAGONAL_DIRS
   end
 
 
   # should return an array of places a Piece can move to
   def moves
+    p move_dirs
+
+
+
+    #self.pos is an array position [3,2]
+    
+    
+
     # create array to collect moves
 
     # iterate over each of the directions in which a slideable piece can move
@@ -42,7 +50,7 @@ module Slideable
 
     # return the final array of moves (containing all possible moves in all directions)
 
-    move_dirs
+    
   end
 
 
