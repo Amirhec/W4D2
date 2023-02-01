@@ -1,5 +1,5 @@
 class Piece
-    attr_reader :value
+    attr_reader :value, :pos
     def initialize(value,pos)
         @value = value
         @pos = pos
