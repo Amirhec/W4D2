@@ -14,7 +14,7 @@ class Board
     def initialize
         @board = Array.new(8) { Array.new(8) }
 
-        @queen_black = Queen.new("queen", [0,3])
+        queen_black = Queen.new("queen", [0,3])
         king_black= King.new("king", [0,4])
         bishop_1_black = Bishop.new("bishop",[0,2])
         bishop_2_black = Bishop.new("bishop", [0,5])
@@ -87,13 +87,17 @@ class Board
             if @board[row_start][col_start].is_a?(Nullpiece) 
                 raise "No piece at start pos"
 
-            else
-                raise "The piece cannot move to end_pos"
+            elsif !@board[row_end][col_end].nil?
+                raise "the piece cannot move to end pos"
 
             end
 
-        instance = @board[start_pos]
-        @board[end_pos] = instance
+        instance = @board[row_start][col_start]
+        @board[row_end][col_end] = instance
+
+        @board[row_start][col_start] = nil
+
+
 
 
 
